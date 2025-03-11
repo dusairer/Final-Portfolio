@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bluesky Bot</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <img src="perfect-cut-logo.png" alt="Logo" class="logo">
+        <h1>Bluesky Bot</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="Inform7/Release/indexIF.html">Interactive Fiction</a></li>
+                <li><a href="bluesky-bot.html">Bluesky Bot</a></li>
+                <li><a href="P5 Game/sketch2555772 (2)/indexP5.html">P5 Game</a></li>
+                <li><a href="ML5 Experience/sketch2560158/indexML5.html">ML5 Experience</a></li>
+                <li><a href="credits.html">Credits</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>Welcome to the Bluesky Bot</h2>
+            <p>Find my Bluesky Bot <a href="https://bsky.app/profile/shwrthghts.bsky.social" target="_blank" rel="noopener noreferrer">here.</a></p>
+        </section>
+    </main>
+    <script>
+        // Create a canvas element
+        const canvas = document.createElement('canvas');
+        document.body.appendChild(canvas);
+        const ctx = canvas.getContext('2d');
+
+        // Set canvas size
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        // Make canvas fixed and cover the entire screen
+        canvas.style.position = 'fixed';
+        canvas.style.top = '0';
+        canvas.style.left = '0';
+        canvas.style.pointerEvents = 'none';
+
+        // Raindrop properties
+        const raindrops = [];
+        const numRaindrops = 100;
+
+        for (let i = 0; i < numRaindrops; i++) {
+            raindrops.push({
+                x: Math.random() * canvas.width,
+                y: -Math.random() * 20 + 10,
+                length: Math.random() * 20 + 10,
+                speed: Math.random() * 5 + 2
+            });
+        }
+
+        // Draw raindrops
+        function drawRaindrops() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.fillStyle = 'rgba(174,194,224,0.75)';
+            ctx.lineWidth = 1;
+            ctx.strokeStyle = 'rgba(174,194,224,0.75)';
+
+            for (let i = 0; i < raindrops.length; i++) {
+                const raindrop = raindrops[i];
+                ctx.beginPath();
+                ctx.moveTo(raindrop.x, raindrop.y);
+                ctx.lineTo(raindrop.x, raindrop.y + raindrop.length);
+                ctx.stroke();
+
+                raindrop.y += raindrop.speed;
+
+                if (raindrop.y > canvas.height) {
+                    raindrop.y = -raindrop.length;
+                }
+            }
+        }
+
+        // Animation loop
+        function animate() {
+            drawRaindrops();
+            requestAnimationFrame(animate);
+        }
+
+        animate();
+    </script>
+</body>
+</html>

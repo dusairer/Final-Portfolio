@@ -1,0 +1,223 @@
+"Maze Escape" by Ryan duSaire
+
+When play begins: say "Maze"
+
+The story headline is "Escape".
+The story description is "Find the exit to the maze"
+
+Release along with an Interpreter, a website, and the source text.
+
+Chapter 1 - The Beginning
+
+The Maze is a region. 
+The Start, First Nameless Room, Second Nameless Room, Third Nameless Room, Fourth Nameless Room, 
+Fifth Nameless Room, Sixth Nameless Room, Seventh Nameless Room, Eighth Nameless Room, 
+Ninth Nameless Room, Tenth Nameless Room, Eleventh Nameless Room, Twelfth Nameless Room, 
+Thirteenth Nameless Room, Fourteenth Nameless Room, Fifteenth Nameless Room, 
+Sixteenth Nameless Room, Seventeenth Nameless Room, Eighteenth Nameless Room, 
+Nineteenth Nameless Room, Twentieth Nameless Room, Twenty-First Nameless Room, 
+Twenty-Second Nameless Room, and Twenty-Third Nameless Room, and End are in the Maze.
+
+The Start is a room. The printed name of the Start is "".
+"You awaken on a cold, hard floor, the chill biting through your skin. Disoriented, you sit up, the echo of your movements bouncing off the walls around you. To the north, west, and south, solid barriers loom, smooth and impenetrable, offering no chance of escape. The only open path lies ahead, eastward, into the unknown. There is no memory of how you got here—only the pressing need to move forward, wherever forward might be."
+
+After looking in a room:
+	repeat with the notable figure running through people in the location:
+		if the notable figure is not the player:
+			say "[description of the notable figure][paragraph break]";
+
+The Wizard is a person in the First Nameless Room. The description of the Wizard is "The wizard is clad in flowing robes of blue and silver. He seems both ancient and alert, as if he knows many things that you don't."
+
+The Wizard can be greeted or ungreeted. The WIzard is ungreeted.
+
+Greeting is an action applying to one thing. 
+Understand "greet [thing]" or "say hello to [thing]" or "say hi to [thing]" or "wave to [thing]" or "hello [thing]" or "hi [thing]" as greeting. 
+
+Check greeting:
+	if the noun is not the wizard:
+		if the noun is not the goblin:
+			say "There's no point in greeting that." instead.
+
+Carry out greeting the wizard:
+	if the wizard is ungreeted:
+		now the wizard is greeted;
+		say "The wizard smiles warmly and inclines his head. 'Greetings, traveler. You arrive at the threshold of a place unlike any other. Prepare yourself for the unexpected.'";
+	otherwise:
+		say "The wizard is already waiting for your questions."
+
+Instead of asking the wizard about something when the wizard is ungreeted:
+	say "The wizard doesn't respond. Perhaps you should greet him first."
+
+Understand "ask [someone] [text]" as asking it about.
+Understand "tell [someone] [text]" as asking it about.
+Understand "ask [someone] about [text]" as asking it about.
+Understand "ask [someone] about the [text]" as asking it about.
+Understand "[someone] [text]" as asking it about.
+
+After asking the wizard about something:
+	repeat through the Table of Wizard Responses:
+		if the topic understood includes topic entry:
+			say "[Response entry][paragraph break]";
+			rule succeeds;		
+	say "The wizard shrugs. 'I have nothing to say about that.'";
+
+
+Table of Wizard Responses
+Topic	Keywords	Response
+"maze/path/secret"	"maze, path, secret"	"The maze is not as it seems. Each path holds a secret, if you have the eyes to see."
+"danger/warning"	"traps, beware, warning"	"You look brave enough to face the maze, but beware—traps are everywhere."
+"history/past/story"	"entered, before, return"	"Many have entered the maze before you. Few have returned."
+"mystery"	"alive, test, will"	"Some say the maze itself is alive. Others say it's a test of will."
+"guardian"	"guardian, meet, anger"	"If you meet the guardian within, do not anger it."
+"goal/treasure/knowledge"	"treasure, knowledge, adventure"	"Do you seek treasure, knowledge, or merely the thrill of adventure?"
+"youth"	"younger, bold, untested"	"You remind me of myself in my younger days, bold and untested!"
+"lost"	"lost, center, key"	"Should you find yourself lost, remember: the center is the key."
+"exit/escape"	"exit, cunning, clever"	"Even the most cunning maze has an exit, if you are clever enough."
+"enter/go"	"linger, await, enter"	"Have you not yet entered the maze? You linger here, but the maze awaits."
+"where/why/how"	"where, why, how"	"The maze is ancient beyond reckoning, its origins lost to time. Some say it was built by a forgotten civilization to guard an unknowable secret. Its impenetrable walls have claimed every life that dared enter, with no soul ever escaping its labyrinthine depths. A unique, arcane key is rumored to be the only means of traversing its passages—a key so rare that its existence is mere legend. Over the centuries, countless adventurers have been lured into its twisting corridors, drawn by whispers of unimaginable treasures. But each who enters vanishes forever, the maze consuming them completely, leaving behind only silence and the haunting sense that something watches, always watches."
+"clue"	"clue"	"The maze can be forgiving, as long as you don't forget the key."
+
+Chapter 2 - Lost
+
+The printed name of the Start is "". 
+The printed name of the First Nameless Room is "". 
+The printed name of the Second Nameless Room is "". 
+The printed name of the Third Nameless Room is "". 
+The printed name of the Fourth Nameless Room is "". 
+The printed name of the Fifth Nameless Room is "". 
+The printed name of the Sixth Nameless Room is "". 
+The printed name of the Seventh Nameless Room is "". 
+The printed name of the Eighth Nameless Room is "". 
+The printed name of the Ninth Nameless Room is "". 
+The printed name of the Tenth Nameless Room is "". 
+The printed name of the Eleventh Nameless Room is "". 
+The printed name of the Twelfth Nameless Room is "". 
+The printed name of the Thirteenth Nameless Room is "". 
+The printed name of the Fourteenth Nameless Room is "". 
+The printed name of the Fifteenth Nameless Room is "". 
+The printed name of the Sixteenth Nameless Room is "". 
+The printed name of the Seventeenth Nameless Room is "". 
+The printed name of the Eighteenth Nameless Room is "". 
+The printed name of the Nineteenth Nameless Room is "". 
+The printed name of the Twentieth Nameless Room is "". 
+The printed name of the Twenty-First Nameless Room is "". 
+The printed name of the Twenty-Second Nameless Room is "". 
+The printed name of the Twenty-Third Nameless Room is "". 
+The printed name of the End is "".
+
+The First Nameless Room is east of the Start. "[if unvisited]You step into the first part of the maze.[otherwise]Paths lead north, east, west, and south from this familiar chamber.[end if]"
+
+The Second Nameless Room is north of the First Nameless Room. "[if unvisited]The walls seem a little closer here.[otherwise]From this cold space, you can go south or west.[end if]"
+
+The Third Nameless Room is east of the First Nameless Room. "[if unvisited]A faint hum echoes in this room.[otherwise]The humming continues as you consider your options: west or north.[end if]"
+
+The Fourth Nameless Room is south of the First Nameless Room. "[if unvisited]There are markings on the floor.[otherwise]The marked floor points to paths leading north, south, and west.[end if]"
+
+The Fifth Nameless Room is west of the Second Nameless Room. "[if unvisited]The air feels colder in this room.[otherwise]In this cold chamber, passages open east and west.[end if]"
+
+The Sixth Nameless Room is west of the Fifth Nameless Room. "[if unvisited]You feel like you're being watched.[otherwise]Under the watchful presence, you can move east or west.[end if]"
+
+The Seventh Nameless Room is west of the Sixth Nameless Room. "[if unvisited]A draft flows through here.[otherwise]The draft flows between passages to the east and north.[end if]"
+
+The Eighth Nameless Room is north of the Seventh Nameless Room. "[if unvisited]Shadows flicker on the walls.[otherwise]The flickering shadows reveal a single path south.[end if]"
+
+The Ninth Nameless Room is north of the Third Nameless Room. "[if unvisited]There's a faint scent of flowers.[otherwise]The floral scent wafts from passages to the south and north.[end if]"
+
+The Tenth Nameless Room is north of the Ninth Nameless Room. "[if unvisited]The maze feels endless.[otherwise]From this vast chamber, you can go south or west.[end if]"
+
+The Eleventh Nameless Room is west of the Tenth Nameless Room. "[if unvisited]This room is eerily silent.[otherwise]The silence pervades passages to the east and west.[end if]"
+
+The Twelfth Nameless Room is west of the Eleventh Nameless Room. "[if unvisited]The air feels heavy here.[otherwise]Through the heavy air, you can move east or west.[end if]"
+
+The Thirteenth Nameless Room is west of the Twelfth Nameless Room. "[if unvisited]You hear faint footsteps.[otherwise]The echoing footsteps reveal paths to the east.[end if]"
+
+The Fourteenth Nameless Room is south of the Fourth Nameless Room. "[if unvisited]This room seems brighter.[otherwise]The brightness illuminates passages north, east, and west.[end if]"
+
+The Fifteenth Nameless Room is east of the Fourteenth Nameless Room. "[if unvisited]The walls are smooth here.[otherwise]The smooth walls guide you west or north.[end if]"
+
+The Sixteenth Nameless Room is north of the Fifteenth Nameless Room. "[if unvisited]The room is strangely warm.[otherwise]The warm air flows only to the south.[end if]"
+
+The Seventeenth Nameless Room is west of the Fourteenth Nameless Room. "[if unvisited]There's a strange hum.[otherwise]The humming resonates down passages to the east and west.[end if]"
+
+The Eighteenth Nameless Room is west of the Seventeenth Nameless Room. "[if unvisited]The floor creaks here.[otherwise]The creaking floorboards extend east.[end if]"
+
+The Key is in the Eighteenth Nameless Room. The key unlocks the Wooden door.
+
+After taking key:
+	say "The key is old, its iron surface covered in rust and age. It’s large, with intricate designs etched into the shaft, twisting in patterns that almost seem to move when you stare too long. The head of the key is shaped like a jagged, winding vine, as if nature itself had shaped it. Despite its weathered appearance, it feels strangely weighty in your hand, as though it holds the power to open something far more ancient and important than it first seems."
+
+The Nineteenth Nameless Room is west of the Fourth Nameless Room. "[if unvisited]You see faint markings.[otherwise]The markings point to paths east and west.[end if]"
+
+The Twentieth Nameless Room is west of the Nineteenth Nameless Room. "[if unvisited]A breeze brushes your face.[otherwise]The breeze flows through openings to the east and west.[end if]"
+
+The Twenty-First Nameless Room is west of the Twentieth Nameless Room. "[if unvisited]There's a faint sound here.[otherwise]The strange sounds echo from passages north, south, and east.[end if]"
+
+The Twenty-Second Nameless Room is south of the Twenty-First Nameless Room. "[if unvisited]The air feels charged.[otherwise]The charged atmosphere crackles to the north.[end if]"
+
+The Twenty-Third Nameless Room is north of the Twenty-First Nameless Room. "A door stands before you, ancient and worn, its surface covered in strange carvings that seem to shift when you’re not looking. Faint light pulses from the cracks, casting an eerie glow on the ground. The wood is cold to the touch, smooth yet cracked, and the door is firmly locked, its heavy metal latch untouched for ages. A faint whisper slips through the cracks, but it’s too soft to make out—just a promise of what lies beyond, if you can unlock it."
+
+The End is east of the Wooden door.
+
+The Wooden door is a door. The Wooden door is west of the End and east of the Twenty-Third Nameless Room. It is locked and lockable. The description is "It's locked tight." Understand "door" as the wooden door.
+
+
+The Goblin is a person in Tenth Nameless Room. The description of the Goblin is "The goblin is a wiry, hunched creature, no taller than a child but bearing the wrinkles and scars of countless years. His skin is a mottled green, rough and leathery, with patches that seem to shimmer faintly in the dim light. Wisps of gray hair sprout haphazardly from his pointed head, framing a pair of sharp, amber eyes that twinkle with mischief and wisdom. His long, crooked nose twitches as he studies you, and his thin, clawed fingers constantly fidget with an ancient, rusted keyring. Despite his small stature and frail appearance, there's an undeniable energy about him, as if he knows secrets that could turn the maze itself inside out."
+
+The Goblin can be greeted or ungreeted. The Goblin is ungreeted.
+
+Carry out greeting the goblin:
+	if the goblin is ungreeted:
+		now the goblin is greeted;
+		say "The goblin smirks and does an exaggerated, mocking bow. 'Oh, what an honor it is to be noticed by you, mighty traveler! Watch your step, genius, or the maze will eat you alive.'";
+	otherwise:
+		say "The goblin raises an eyebrow. 'Still here? Haven’t figured it all out yet? Shocking.'";
+
+
+Instead of asking the goblin about something when the goblin is ungreeted:
+	say "The goblin stares at you blankly. 'Oh, sorry, I don’t talk to rude people. Maybe try saying hello first? Just a thought.'";
+
+Table of Goblin Responses
+Topic	Response
+"maze"	"The goblin chuckles. 'Ah, the maze? It’s alive, you know. Shifts and twists when you’re not looking. You’ll love it—if you survive.'"
+"treasure"	"The goblin's eyes gleam. 'Treasure? Sure, there’s plenty. But you’ll probably lose a hand trying to grab it. Your call, hero.'"
+"escape"	"The goblin smirks. 'Escape? Oh, absolutely. Just take the secret invisible staircase guarded by three minotaurs. Easy peasy!'"
+"traps" 	"The goblin rolls his eyes. 'Traps? Oh, there’s loads. They’re practically begging for someone to step on them. Maybe you’ll be the lucky one.'"
+"wizard"	"The goblin sneers. 'The wizard? Oh, he’s a delight. All robes and fireballs. Thinks he’s so clever. Can’t even handle a goblin like me.'"
+"goblin"	"The goblin puffs his chest. 'Me? I’m the brains and charm of this operation. Stick with me, and you’ll… probably survive.'"
+"hint"	"The goblin leans in. 'A hint? Sure. Don’t get lost. Don’t die. Don’t blame me if you mess it up.'"
+"monsters"	"The goblin grins wickedly. 'Oh, the monsters? They’re adorable. Especially when they’re chasing you down.'"
+"magic"	"The goblin groans. 'Magic, magic, magic. You humans are obsessed. Here’s some magic: poof, you’re still stuck in the maze.'"
+"food"	"The goblin licks his lips. 'Food? Sure, eat the mushrooms. Some are fine. Some will turn you into a toad. Your choice.'"
+"friends"	"The goblin snorts. 'Friends? In a maze? Oh, that’s rich. Everyone else here just wants to win. Or eat you. Probably both.'"
+"doors"	"The goblin taps his chin. 'Doors? Yeah, some of them are traps. Some of them go nowhere. Some of them are just rude.'"
+"keys"	"The goblin jingles a keyring. 'Keys? Oh, I might have one that works. Want to trade? It’ll cost you.'"
+"time"	"The goblin grins. 'Time? Oh, don’t worry about it. You’ll either make it out or die before it matters.'"
+"gold"	"The goblin’s eyes light up. 'Gold? Now we’re talking! Fork some over, and maybe I’ll give you a real hint.'"
+"enemy"	"The goblin leans close. 'The enemy? That’s the fun part. Could be the maze, could be yourself. Good luck figuring it out.'"
+"light"	"The goblin peers up. 'Light? Oh, sure, there’s light. If you survive long enough to find it.'"
+"default"	"The goblin scratches his head. 'What are you even talking about? I can’t keep up with your nonsense.'"
+
+After asking the goblin about something:
+	repeat through the Table of Goblin Responses:
+		if the topic understood includes topic entry:
+			say "[Response entry][paragraph break]";
+			rule succeeds;
+	say "The goblin laughs. 'That’s a good one! Ask me something that makes sense next time.'";
+
+
+
+
+
+Chapter 3 - The End
+
+After going to the Twenty-Second Nameless Room for the first time:
+	end the story finally saying "Without warning, the walls groan, and the ceiling above you shudders. You look up just in time to see the massive stone blocks beginning to descend, too late to escape. The last thing you hear is the dreadful sound of crumbling rock as the world turns to darkness."
+
+After going to the Sixteenth Nameless Room for the first time:
+	end the story finally saying "With a low rumble, the ground shakes. You turn just in time to see the stone wall behind you sliding into place, sealing you off from the rest of the maze. There's no escape, no way forward. You press against the cold stone, but it’s futile. The last breath of air leaves your lungs as the darkness closes in."
+	
+After going to the Thirteenth Nameless Room for the first time:
+	end the story finally saying "You take one misstep—and suddenly, the floor gives way beneath you. There's no time to scream. The world spins, and the air rushes past as you plummet into darkness. The last thing you hear is the goblin’s voice, faint but unmistakably amused: 'Well, that was quick. Should've watched where you were going, genius.'"
+
+After opening the Wooden door:
+	end the story finally saying  "A thin beam of natural light pierces the gloom ahead. Your heart leaps - could it be? The secret paths of the labyrinth have tested your resolve, broken your certainties, and forced you to question everything you thought you knew. But now... you stand in the presence of mysteries that have claimed countless others. You alone have navigated the twisting passages. You alone have survived. As you step toward the light, the walls seem to exhale around you, as if the very maze acknowledges your victory over its cruel design. You have mastered the impossible labyrinth. The darkness has surrendered its secrets. There is only forward now. Toward the light."
